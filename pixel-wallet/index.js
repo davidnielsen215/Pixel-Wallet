@@ -10,8 +10,7 @@ const expressJwt = require("express-jwt");
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use("/api", expressJwt({secret: process.env.SECRET}));
-app.use("/api/income", require("./routes/income"));
-app.use("/api/expense", require("./routes/expense"));
+app.use("/api/finance", require("./routes/finance"));
 app.use((err, req, res, next) => {
     console.error(err);
     if (err.name === "UnauthorizedError") {
@@ -30,8 +29,7 @@ mongoose.connect("mongodb://localhost:27017/user-auth-pixelwallet",
     }
 );
 
-app.use("/expense", require("./routes/expense"));
-app.use("/income", require("./routes/income"));
+app.use("/finance", require("./routes/finance"));
 app.use("/auth", require("./routes/auth"));
 
 app.use((err, req, res, next) => {
