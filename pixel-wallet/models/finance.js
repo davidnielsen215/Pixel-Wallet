@@ -4,6 +4,9 @@ const Schema = mongoose.Schema;
 
 const financeSchema = new Schema({
     // Add a reference to the user to whom this expense belongs
+    title: {
+        type: String
+    },
     expenses: {
         type: Array,
         required: true
@@ -11,6 +14,10 @@ const financeSchema = new Schema({
     incomes: {
         type: Array
     },
+    user: {
+        type: Schema.Types,ObjectId,
+        ref: "User",
+    }
 });
 
 

@@ -13,8 +13,8 @@ function App() {
             <Switch>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/login" component={Login}/>
-                <Route path="finance" component={FinanceList}/>
-                <Route path="/" render={() => <Redirect to ="/finance"/>}/>
+                <Route path="finances" component={FinanceList}/>
+                <Route path="/" render={() => <Redirect to ="/finances"/>}/>
             </Switch>
         </div>
     )
