@@ -70,7 +70,7 @@ export class AppContextProvider extends Component {
     }
 
     getIncomes = () => {
-        return financeAxios.get("api/finance/")
+        return financeAxios.get("/api/finance/")
             .then(response => {
                 this.setState({ incomes: response.data }) 
                 return response
@@ -78,9 +78,9 @@ export class AppContextProvider extends Component {
     }
 
     getExpenses = () => {
-        return financeAxios.get("api/finance/")
+        return financeAxios.get("/api/finance/")
         .then(response => {
-            this.setState({ expenses: response.date })
+            this.setState({ expenses: response.data })
             return response
         })
     }
@@ -131,7 +131,7 @@ export class AppContextProvider extends Component {
     }
 
     deleteIncome = (incomeId) => {
-        return financeAxios.delete(`/api/finance${incomeId}`)
+        return financeAxios.delete(`/api/finance/${incomeId}`)
             .then(response => {
                 this.setState(prevState => {
                     const updatedIncomes = prevState.incomes.filter(income => {
@@ -144,7 +144,7 @@ export class AppContextProvider extends Component {
     }
 
     deleteExpense = (expenseId) => {
-        return financeAxios.delete(`/api/finance${expenseId}`)
+        return financeAxios.delete(`/api/finance/${expenseId}`)
             .then(response => {
                 this.setState(prevState => {
                     const updatedExpenses = prevState.expenses.filter(expense => {

@@ -38,7 +38,7 @@ class AddIncomeForm extends Component {
                     <h4>Add New Income</h4>
 
                     <input 
-                        name="income-title"
+                        name="title"
                         value={this.state.title}
                         onChange={this.handleChange}
                         type="text"

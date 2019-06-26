@@ -9,13 +9,13 @@ const financeSchema = new Schema({
     },
     expenses: {
         type: Array,
-        required: true
+        // required: true
     },
     incomes: {
         type: Array
     },
     user: {
-        type: Schema.Types,ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User",
     }
 });

@@ -7,14 +7,15 @@ import Login from "./Auth/Login"
 import FinanceList from "./Finances/FinanceList"
 
 function App() {
+    console.log('hello')
     return(
         <div className="app-wrapper">
             <Navbar/>
             <Switch>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/login" component={Login}/>
-                <Route path="finances" component={FinanceList}/>
-                <Route path="/" render={() => <Redirect to ="/finances"/>}/>
+                <Route path="/finance" component={FinanceList}/>
+                <Route path="/" render={() => <Redirect to ="/finance"/>}/>
             </Switch>
         </div>
     )

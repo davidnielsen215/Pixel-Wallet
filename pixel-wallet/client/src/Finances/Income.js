@@ -9,7 +9,7 @@ function Income(props) {
                 onChange={() => props.editIncome(props.income._id, { completed: !props.income.completed })}
                 type="checkbox"
                 checked={props.income.completed}/>
-            <button onClick={() => props.deleteIncome(props.income._id)}>X</button>
+            <button onClick={() => props.deleteIncome(props.income._id)}>delete</button>
         </div>
     )
 }
