@@ -6,7 +6,8 @@ class LoginForm extends Component {
         super();
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            errorMessage: ""
         }
     }
 
@@ -20,19 +21,23 @@ class LoginForm extends Component {
     clearInputs = () => {
         this.setState({
             username: "",
-            password: ""
+            password: "",
+            errorMessage: ""
         })
     }
-
+    
     handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         this.props.login(this.state)
-            .then(() => this.props.history.push("/finance"))
+            .then(() => this.clearInputs())
+            .catch(err => {
+                this.setState({errorMessage: "Username or password are incorrect"})
+            })
     }
 
     render() {
         return (
-            <div className="login-signup-wrap">
+            <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
                     <h3>Log In</h3>
                     <input
@@ -48,7 +53,11 @@ class LoginForm extends Component {
                         type="password"
                         placeholder="password"/>
                     <button type="submit">Submit</button>
-                </form>
+                    </form>
+                    {
+                        this.state.errorMessage &&
+                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
+                    }
             </div>
         )
     }

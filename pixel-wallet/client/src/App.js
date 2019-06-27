@@ -5,6 +5,7 @@ import Navbar from "./Navbar"
 import Signup from "./Auth/Signup"
 import Login from "./Auth/Login"
 import FinanceList from "./Finances/FinanceList"
+import ProtectedRoute from "./Auth/ProtectedRoute"
 
 function App() {
     console.log('hello')
@@ -14,7 +15,7 @@ function App() {
             <Switch>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/login" component={Login}/>
-                <Route path="/finance" component={FinanceList}/>
+                <ProtectedRoute path="/finance" component={FinanceList}/>
                 <Route path="/" render={() => <Redirect to ="/finance"/>}/>
             </Switch>
         </div>

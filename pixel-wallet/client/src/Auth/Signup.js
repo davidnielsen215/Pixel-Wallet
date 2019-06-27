@@ -6,7 +6,8 @@ class Signup extends Component {
         super()
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            errorMessage: ""
         }
     }
 
@@ -18,21 +19,25 @@ class Signup extends Component {
     }
 
     clearInputs = () => {
-        this.setState({
-            username: "",
-            password: ""
-        })
-    }
+    this.setState({
+        username: "",
+        password: "",
+        errorMessage: ""
+    })
+}
 
     handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.signup(this.state)
-            .then(() => this.props.history.push("/finance"))  
-    }
+    e.preventDefault();
+    this.props.signup(this.state)
+        .then(() => this.clearInputs())
+        .catch(err => {
+            this.setState({errorMessage: "That username already exists!"})
+        })
+}
 
     render() {
         return (
-            <div className="login-signup-wrap">
+            <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
                     <h3>Sign Up</h3>
                     <input 
@@ -48,7 +53,11 @@ class Signup extends Component {
                         type="password"
                         placeholder="Password"/>
                     <button type="submit">Create Account</button>
-                </form>
+                    </form>
+                    {
+                        this.state.errorMessage &&
+                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
+                    }
             </div>
         )
     }
