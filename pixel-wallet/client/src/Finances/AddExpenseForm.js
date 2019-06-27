@@ -4,7 +4,8 @@ class AddExpenseForm extends Component {
     constructor() {
         super()
         this.state ={
-            title: ""
+            title: "",
+            expenses: ""
         }
     }
 
@@ -18,7 +19,8 @@ class AddExpenseForm extends Component {
 
     clearInputs = () => {
         this.setState({
-            title: ""
+            title: "",
+            expenses: ""
         })
     }
 
@@ -43,6 +45,13 @@ class AddExpenseForm extends Component {
                         onChange={this.handleChange}
                         type="text"
                         placeholder="title"
+                    />
+                    <input 
+                        name="expenses"
+                        value={this.state.expenses}
+                        onChange={this.handleChange}
+                        type="number"
+                        placeholder="amount"
                     />
                     <button>add</button>
                 </form>

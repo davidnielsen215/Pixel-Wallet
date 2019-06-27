@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withContext } from '../AppContext'
 
+
+
 class LoginForm extends Component {
     constructor() {
         super();
@@ -29,8 +31,11 @@ class LoginForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.login(this.state)
-            .then(() => this.clearInputs())
+            .then(() => {
+                this.props.history.push('/profile')
+            })
             .catch(err => {
+                this.clearInputs()
                 this.setState({errorMessage: "Username or password are incorrect"})
             })
     }
@@ -38,9 +43,9 @@ class LoginForm extends Component {
     render() {
         return (
             <div className="form-wrapper">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} >
                     <h3>Log In</h3>
-                    <input
+                    <input 
                         onChange={this.handleChange}
                         value={this.state.username}
                         name="username"

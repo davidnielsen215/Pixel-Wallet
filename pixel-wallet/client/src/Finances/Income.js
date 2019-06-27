@@ -3,12 +3,9 @@ import React from 'react';
 function Income(props) {
     return (
         <div>
-            <h3>{props.income.title}</h3>
-            <label>Income</label>
-            <input
-                onChange={() => props.editIncome(props.income._id, { completed: !props.income.completed })}
-                type="checkbox"
-                checked={props.income.completed}/>
+            <h2>{props.income.title}</h2>
+            
+            <h2>{props.income.incomes}</h2>
             <button onClick={() => props.deleteIncome(props.income._id)}>delete</button>
         </div>
     )

@@ -60,7 +60,8 @@ export class AppContextProvider extends Component {
             incomes: [],
             expenses: [],
             user: {},
-            token: ""
+            token: "",
+            
         })
     }
 

@@ -1,8 +1,12 @@
 import React from 'react';
 import { withContext } from "./AppContext";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 function Navbar(props) {
+    const logoutButton = () => {
+        props.logout()
+        props.history.push('/login')
+    }
     return (
         <nav className="navbar-wrapper">
 
@@ -29,7 +33,8 @@ function Navbar(props) {
                         </div>
 
                         <div className="nav-link">
-                            <button onClick={() => props.logout()}>Logout</button>
+                            <button onClick={logoutButton}>
+                                Logout</button>
                         </div>
                     </React.Fragment>
             }
@@ -37,4 +42,4 @@ function Navbar(props) {
     )
 }
 
-export default withContext(Navbar);
+export default withRouter(withContext(Navbar));

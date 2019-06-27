@@ -29,8 +29,11 @@ class Signup extends Component {
     handleSubmit = (e) => {
     e.preventDefault();
     this.props.signup(this.state)
-        .then(() => this.clearInputs())
+        .then(() => {
+            this.props.history.push("/profile")
+        })
         .catch(err => {
+            this.clearInputs()
             this.setState({errorMessage: "That username already exists!"})
         })
 }

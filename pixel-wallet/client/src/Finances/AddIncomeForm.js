@@ -4,7 +4,8 @@ class AddIncomeForm extends Component {
     constructor() {
         super()
         this.state ={
-            title: ""
+            title: "",
+            incomes: ""
         }
     }
 
@@ -18,7 +19,8 @@ class AddIncomeForm extends Component {
 
     clearInputs = () => {
         this.setState({
-            title: ""
+            title: "",
+            incomes: ""
         })
     }
 
@@ -43,6 +45,13 @@ class AddIncomeForm extends Component {
                         onChange={this.handleChange}
                         type="text"
                         placeholder="title"
+                    />
+                    <input 
+                        name="incomes"
+                        value={this.state.incomes}
+                        onChange={this.handleChange}
+                        type="number"
+                        placeholder="amount"
                     />
                     <button>add</button>
                 </form>
