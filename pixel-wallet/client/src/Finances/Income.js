@@ -3,10 +3,12 @@ import React from 'react';
 function Income(props) {
     return (
         <div>
-            <h2>{props.income.title}</h2>
-            
-            <h2>{props.income.incomes}</h2>
+            <h1>{props.income.title}</h1>
+            <h2>{props.income.amount}</h2>
+            <h3>{props.income.type}</h3>
+
             <button onClick={() => props.deleteIncome(props.income._id)}>delete</button>
+
         </div>
     )
 }

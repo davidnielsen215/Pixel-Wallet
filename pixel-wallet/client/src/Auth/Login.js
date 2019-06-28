@@ -5,7 +5,7 @@ import { withContext } from '../AppContext'
 
 class LoginForm extends Component {
     constructor() {
-        super();
+        super()
         this.state = {
             username: "",
             password: "",
@@ -32,7 +32,7 @@ class LoginForm extends Component {
         e.preventDefault();
         this.props.login(this.state)
             .then(() => {
-                this.props.history.push('/profile')
+                this.props.history.push("/profile")
             })
             .catch(err => {
                 this.clearInputs()
@@ -50,13 +50,15 @@ class LoginForm extends Component {
                         value={this.state.username}
                         name="username"
                         type="text"
-                        placeholder="username"/>
+                        placeholder="username"
+                        autoComplete='off'/>
                     <input
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
-                        placeholder="password"/>
+                        placeholder="password"
+                        autoComplete='off'/>
                     <button type="submit">Submit</button>
                     </form>
                     {

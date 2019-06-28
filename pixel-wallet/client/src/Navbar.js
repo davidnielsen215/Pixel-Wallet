@@ -25,7 +25,7 @@ function Navbar(props) {
                 :
                     <React.Fragment>
                         <div className="nav-link">
-                            <Link to="/finance">Review Finances</Link>
+                            <Link to="/finance">Edit Finances</Link>
                         </div>
 
                         <div className="nav-link">

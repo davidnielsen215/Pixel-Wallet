@@ -66,25 +66,21 @@ export class AppContextProvider extends Component {
     }
 
     componentDidMount() {
-        this.getIncomes()
-        this.getExpenses()
+        this.getFinances()
     }
 
-    getIncomes = () => {
+    getFinances = () => {
         return financeAxios.get("/api/finance/")
             .then(response => {
-                this.setState({ incomes: response.data }) 
+                this.setState({ 
+                    incomes: response.data.filter(money => money.type === 'income'),
+                    expenses: response.data.filter(money => money.type === 'expense'),
+                 }) 
                 return response
             })
     }
 
-    getExpenses = () => {
-        return financeAxios.get("/api/finance/")
-        .then(response => {
-            this.setState({ expenses: response.data })
-            return response
-        })
-    }
+
 
     addIncome = (newIncome) => {
         return financeAxios.post("/api/finance/", newIncome)

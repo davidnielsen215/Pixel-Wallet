@@ -48,13 +48,15 @@ class Signup extends Component {
                         value={this.state.username}
                         name="username"
                         type="text"
-                        placeholder="Username"/>
+                        placeholder="Username"
+                        autoComplete='off'/>
                     <input
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
-                        placeholder="Password"/>
+                        placeholder="Password"
+                        autoComplete='off'/>
                     <button type="submit">Create Account</button>
                     </form>
                     {

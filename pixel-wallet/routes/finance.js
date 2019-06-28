@@ -17,7 +17,6 @@ financeRouter.get("/", (req, res, next) => {
 
 financeRouter.post("/", (req, res, next) => {
     const finance = new Finance(req.body);
-
     // Addition: include the user property to this new finance
     finance.user = req.user._id;
     finance.save(function (err, newFinance) {
