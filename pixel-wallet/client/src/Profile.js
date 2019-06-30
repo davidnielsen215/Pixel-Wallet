@@ -42,6 +42,12 @@ class Profile extends Component {
         console.log(this.props.expenses)
         return (
             <>
+            <h1 className="main-title">
+                INCOME 
+            </h1>
+            <h1 className="main-title">
+                EXPENSE
+            </h1>
             <div className='finance-container'>
                 <div className="income-container">
                     {incomes}

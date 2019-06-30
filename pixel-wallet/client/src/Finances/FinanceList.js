@@ -4,6 +4,7 @@ import Expense from './Expense'
 import AddIncomeForm from './AddIncomeForm'
 import AddExpenseForm from './AddExpenseForm'
 import { withContext } from '../AppContext'
+import "./Financelist.css"
 
 function FinanceList(props) {
     const incomes = props.incomes.map(income =>{
@@ -29,12 +30,16 @@ function FinanceList(props) {
     })
 
     return (
-        <main>
-            <AddIncomeForm addIncome={props.addIncome} />
-            {/* {incomes} */}
-            <AddExpenseForm addExpense={props.addExpense} />
-            {/* {expenses} */}
-        </main>
+        <div className="finance-list">
+            <main>
+                <AddIncomeForm addIncome={props.addIncome} />
+                    <br></br>
+                
+                    <AddExpenseForm addExpense={props.addExpense} />
+                
+            </main>
+        </div>
+        
     )
 }
 

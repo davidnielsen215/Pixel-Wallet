@@ -13,7 +13,7 @@
 .expense-container{
     display: grid;
     width: 50%;
-    right: 20%;
+    left: 10%;
     border: 1px solid black;
 }
 
@@ -39,4 +39,10 @@
     
     display: grid
 }
+
+.main-title{
+width: 50%;
+display: inline-block;
+}
+
 

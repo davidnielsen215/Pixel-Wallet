@@ -1,0 +1,8 @@
+.finance-list{
+    width: 100%;
+    max-width: 330px;
+    height: 600px;
+    padding: 15px;
+    margin: auto;
+    border: 1px solid black;
+}

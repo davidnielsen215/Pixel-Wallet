@@ -46,9 +46,10 @@ class AddIncomeForm extends Component {
                         value={this.state.title}
                         onChange={this.handleChange}
                         type="text"
-                        placeholder="title"
+                        placeholder="description"
                         autoComplete='off'
                     />
+                    <br></br>
                     <input 
                         name="amount"
                         value={this.state.amount}
@@ -57,12 +58,7 @@ class AddIncomeForm extends Component {
                         placeholder="amount"
                         autoComplete='off'
                     />
-                    {/* <input 
-                        name="type"
-                        value="income"
-                        onChange={this.handleChange}
-                        placeholder="Finance Type"
-                    /> */}
+                    <br></br>
                     <button>add</button>
                 </form>
             </div>

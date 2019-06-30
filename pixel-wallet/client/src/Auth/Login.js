@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { withContext } from '../AppContext'
-
-
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import "./Login.css"
+import "bootstrap/dist/css/bootstrap.css"
 
 class LoginForm extends Component {
     constructor() {
@@ -35,6 +36,7 @@ class LoginForm extends Component {
                 this.props.history.push("/profile")
             })
             .catch(err => {
+                console.log(err)
                 this.clearInputs()
                 this.setState({errorMessage: "Username or password are incorrect"})
             })
@@ -42,30 +44,48 @@ class LoginForm extends Component {
 
     render() {
         return (
+            <>
+       
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit} >
-                    <h3>Log In</h3>
+                    <h1>PixelWallet</h1>
+                    <h2 className="grey-text text-darken-3">Log in</h2>
+                    <div className="input-field">
+
+                    </div>
+                    <FormGroup>
+                        <label>Username</label>
+                        <br></br>
                     <input 
                         onChange={this.handleChange}
                         value={this.state.username}
                         name="username"
-                        type="text"
-                        placeholder="username"
+                        type="text" 
                         autoComplete='off'/>
+                    <br></br>
+                    <label>Password</label>
+                    <br></br>
                     <input
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
-                        placeholder="password"
                         autoComplete='off'/>
-                    <button type="submit">Submit</button>
+                        <br></br>
+                    </FormGroup>
+
+                    <button type="submit"
+                            className="btn-lg btn-dark btn-block">
+                        Submit
+                    </button>
                     </form>
+                    <br></br>
                     {
                         this.state.errorMessage &&
-                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
+                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
                     }
             </div>
+            </>
         )
     }
 }

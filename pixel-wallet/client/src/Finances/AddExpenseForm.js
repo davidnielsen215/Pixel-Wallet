@@ -46,9 +46,10 @@ class AddExpenseForm extends Component {
                         value={this.state.title}
                         onChange={this.handleChange}
                         type="text"
-                        placeholder="title"
+                        placeholder="description"
                         autoComplete='off'
                     />
+                    <br></br>
                     <input 
                         name="amount"
                         value={this.state.amount}
@@ -57,7 +58,7 @@ class AddExpenseForm extends Component {
                         placeholder="amount"
                         autoComplete='off'
                     />
-            
+                    <br></br>
                     <button>add</button>
                 </form>
             </div>

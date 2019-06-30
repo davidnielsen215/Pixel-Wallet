@@ -47,8 +47,6 @@ export class AppContextProvider extends Component {
                 });
                 
  
-                this.getIncomes()
-                this.getExpenses()
                 return response
             })
     }
@@ -160,8 +158,6 @@ export class AppContextProvider extends Component {
                     login: this.login,
                     signup: this.signup,
                     logout: this.logout,
-                    getIncomes: this.getIncomes,
-                    getExpenses: this.getExpenses,
                     addIncome: this.addIncome,
                     addExpense: this.addExpense,
                     editIncome: this.editIncome,

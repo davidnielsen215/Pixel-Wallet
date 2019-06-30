@@ -33,7 +33,7 @@ function Navbar(props) {
                         </div>
 
                         <div className="nav-link">
-                            <button onClick={logoutButton}>
+                            <button onClick={logoutButton} className="btn-lg btn-dark btn-block">
                                 Logout</button>
                         </div>
                     </React.Fragment>

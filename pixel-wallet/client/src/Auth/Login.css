@@ -1,0 +1,16 @@
+
+.form-wrapper{
+    width: 100%;
+    max-width: 330px;
+    height: 600px;
+    padding: 25px;
+    padding-top: 60px;
+    margin: auto;
+    border: 1px solid black;
+    background-image: url("https://picstatio.com/download/1080x1920/24d51d/triangles-abstract.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    /* background-position-y: -60px; */
+}
+

@@ -1,5 +1,8 @@
 import React, {Component } from 'react'
 import { withContext } from "../AppContext"
+import { Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import "./Login.css"
+import "bootstrap/dist/css/bootstrap.css"
 
 class Signup extends Component {
     constructor() {
@@ -42,26 +45,37 @@ class Signup extends Component {
         return (
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
-                    <h3>Sign Up</h3>
+                <h1>PixelWallet</h1>
+                    <h2 className="grey-text text-darken-3">Sign Up</h2>
+                    <div className="input-field">
+
+                    </div>
+                    <FormGroup>
+                        <label>Username</label>
+                        <br></br>
                     <input 
                         onChange={this.handleChange}
                         value={this.state.username}
                         name="username"
                         type="text"
-                        placeholder="Username"
+                        
                         autoComplete='off'/>
+                        <br></br>
+                        <label>Password</label>
+                        <br></br>
                     <input
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
-                        placeholder="Password"
+                        
                         autoComplete='off'/>
-                    <button type="submit">Create Account</button>
+                    </FormGroup>
+                    <button type="submit" className="btn-lg btn-dark btn-block">Create Account</button>
                     </form>
                     {
                         this.state.errorMessage &&
-                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
+                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
                     }
             </div>
         )
