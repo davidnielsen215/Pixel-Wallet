@@ -13,26 +13,29 @@ function Navbar(props) {
             {
                 !props.token ?
                     <React.Fragment>
-                        <div className="nav-link">
+                        <div className="btn-lg btn-dark">
                             <Link to="/signup">Sign Up</Link>
                         </div>
 
-                        <div className="nav-link">
+                        <div className="btn-lg btn-dark">
                             <Link to="/login">Log In</Link>
                         </div>
 
                     </React.Fragment>
                 :
                     <React.Fragment>
-                        <div className="nav-link">
+                        
+                        <div className="btn-lg btn-dark">
                             <Link to="/finance">Edit Finances</Link>
                         </div>
 
-                        <div className="nav-link">
+                        <div className="btn-lg btn-dark">
                             <Link to="/profile">Profile</Link>
                         </div>
+                       
+                        
 
-                        <div className="nav-link">
+                        <div>
                             <button onClick={logoutButton} className="btn-lg btn-dark btn-block">
                                 Logout</button>
                         </div>

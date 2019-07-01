@@ -1,8 +1,54 @@
+body{
+    background-image:url("https://picstatio.com/download/1080x1920/24d51d/triangles-abstract.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
 .finance-list{
     width: 100%;
     max-width: 330px;
     height: 600px;
     padding: 15px;
     margin: auto;
+    /* border: 1px solid rgb(5, 5, 5); */
+    /* background-color: rgb(125, 196, 184); */
+    padding-top: 5%;
+    margin-top: 2%;
+}
+
+/* .finance-holder{
+    background-color: white;
+} */
+
+.navbar-wrapper{
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+    color: white;
+    text-decoration: none;
+}
+.button{
+    min-width: 25%;
+    max-width: 30%;
+    min-height: 10%;
+    max-height: 20%;
+    float: center;
+    background-color: rgb(24, 24, 24);
     border: 1px solid black;
+    padding-top: 2%;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-color: white;
+    margin-bottom: 5%;
+}
+.button:hover{
+   background-color: rgb(6, 24, 105);
+    
+}
+
+.item-holder{
+    align-self: center;
+    border: 1px solid black;
+    padding: 2%;
+    
 }

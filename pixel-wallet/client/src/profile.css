@@ -1,20 +1,29 @@
+
 .finance-container{
     display: flex;
-    width: 100%;
+    /* width: 98%; */
     float: center;
+    align-content: center;
+    border: 1px solid black;
+    margin-right: 2%;
+    margin-left: 2%;
+
 }
 
 .income-container{
-    display: grid;
+    display: block;
     width: 50%;
     left: 10%;
     border: 1px solid black;
+    /* background-color: rgb(173, 252, 179); */
 }
 .expense-container{
-    display: grid;
+    display: block;
     width: 50%;
     left: 10%;
     border: 1px solid black;
+    /* background-color: rgb(255, 223, 223); */
+    
 }
 
 .total-container{
@@ -24,25 +33,40 @@
     height: 20%;
     
 }
+
 .total-income{
     width: 50%;
-    border: 1px solid black;
+    height: 60%;
+    border: 3px solid black;
     margin: 3%;
-    
     display: grid;
+    align-content: center;
+    font-size: 25px;
+    /* background-color: rgb(170, 250, 177); */
 }
  
 .total-expense{
     width: 50%;
-    border: 1px solid black;
+    height: 60%;
+    border: 3px solid black;
     margin: 3%;
-    
-    display: grid
+    display: grid;
+    align-content: center;
+    font-size: 25px;
+    /* background: rgb(255, 202, 202); */
 }
 
 .main-title{
 width: 50%;
 display: inline-block;
+}
+
+.daily-limit{
+    width: 50%;
+    border: 3px solid black;
+    display: inline-block;
+    margin-bottom: 3%;
+    background-color: rgb(128, 194, 161)
 }
 
 

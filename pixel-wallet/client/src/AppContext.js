@@ -63,9 +63,9 @@ export class AppContextProvider extends Component {
         })
     }
 
-    componentDidMount() {
-        this.getFinances()
-    }
+    // componentDidMount() {
+    //     this.getFinances()
+    // }
 
     getFinances = () => {
         return financeAxios.get("/api/finance/")
@@ -158,6 +158,7 @@ export class AppContextProvider extends Component {
                     login: this.login,
                     signup: this.signup,
                     logout: this.logout,
+                    getFinances: this.getFinances,
                     addIncome: this.addIncome,
                     addExpense: this.addExpense,
                     editIncome: this.editIncome,

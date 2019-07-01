@@ -30,7 +30,7 @@ function FinanceList(props) {
     })
 
     return (
-        <div className="finance-list">
+        <form className="finance-list">
             <main>
                 <AddIncomeForm addIncome={props.addIncome} />
                     <br></br>
@@ -38,7 +38,7 @@ function FinanceList(props) {
                     <AddExpenseForm addExpense={props.addExpense} />
                 
             </main>
-        </div>
+        </form>
         
     )
 }

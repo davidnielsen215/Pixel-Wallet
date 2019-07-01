@@ -30,14 +30,15 @@ class AddExpenseForm extends Component {
         e.preventDefault()
         this.props.addExpense(this.state)
             .then(response => {
-                this.clearInputs()
+                alert("Expense Added")
             })
             .catch(err => console.log(err.response.data.message))
+            this.clearInputs()
     }
 
     render() {
         return(
-            <div>
+            <div className="item-holder">
                 <form onSubmit={this.handleSubmit}>
                     <h4>Add New Expense</h4>
 
@@ -50,6 +51,7 @@ class AddExpenseForm extends Component {
                         autoComplete='off'
                     />
                     <br></br>
+                    <br></br>
                     <input 
                         name="amount"
                         value={this.state.amount}
@@ -59,7 +61,8 @@ class AddExpenseForm extends Component {
                         autoComplete='off'
                     />
                     <br></br>
-                    <button>add</button>
+                    <br></br>
+                    <button className="btn-dark">add</button>
                 </form>
             </div>
         )

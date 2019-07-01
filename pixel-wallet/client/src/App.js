@@ -9,7 +9,7 @@ import ProtectedRoute from "./Auth/ProtectedRoute"
 import Profile from './Profile'
 
 function App() {
-    console.log('hello')
+
     return(
         <div className="app-wrapper">
             <Navbar/>

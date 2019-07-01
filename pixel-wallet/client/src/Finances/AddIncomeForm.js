@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import './Financelist.css'
 class AddIncomeForm extends Component {
     constructor() {
         super()
@@ -22,7 +22,7 @@ class AddIncomeForm extends Component {
         this.setState({
             title: "",
             amount: "",
-            type: ""
+            type: "income"
         })
     }
 
@@ -30,14 +30,15 @@ class AddIncomeForm extends Component {
         e.preventDefault()
         this.props.addIncome(this.state)
             .then(response => {
-                this.clearInputs()
+                alert("Income Added")
             })
             .catch(err => console.log(err.response.data.message))
+            this.clearInputs()
     }
 
     render() {
         return(
-            <div>
+            <div className="item-holder">
                 <form onSubmit={this.handleSubmit}>
                     <h4>Add New Income</h4>
 
@@ -50,6 +51,7 @@ class AddIncomeForm extends Component {
                         autoComplete='off'
                     />
                     <br></br>
+                    <br></br>
                     <input 
                         name="amount"
                         value={this.state.amount}
@@ -59,7 +61,8 @@ class AddIncomeForm extends Component {
                         autoComplete='off'
                     />
                     <br></br>
-                    <button>add</button>
+                    <br></br>
+                    <button className="btn-dark">add</button>
                 </form>
             </div>
         )

@@ -3,6 +3,7 @@ import { withContext } from "../AppContext"
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap'
 import "./Login.css"
 import "bootstrap/dist/css/bootstrap.css"
+import {Link, withRouter } from "react-router-dom"
 
 class Signup extends Component {
     constructor() {
@@ -46,7 +47,7 @@ class Signup extends Component {
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
                 <h1>PixelWallet</h1>
-                    <h2 className="grey-text text-darken-3">Sign Up</h2>
+                    <h3 className="grey-text text-darken-3">Sign Up</h3>
                     <div className="input-field">
 
                     </div>
@@ -68,15 +69,19 @@ class Signup extends Component {
                         value={this.state.password}
                         name="password"
                         type="password"
-                        
                         autoComplete='off'/>
                     </FormGroup>
-                    <button type="submit" className="btn-lg btn-dark btn-block">Create Account</button>
+                    <button type="submit" className="btn-lg btn-dark">Create Account</button>
                     </form>
+                    <br></br>
                     {
                         this.state.errorMessage &&
-                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
+                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
                     }
+                    <br>
+                    </br>
+                    <div>Already have an account?</div>
+            <Link to="/login">Log In Here</Link>
             </div>
         )
     }

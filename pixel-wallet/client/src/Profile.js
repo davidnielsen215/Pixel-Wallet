@@ -2,23 +2,23 @@ import React, {Component} from 'react'
 import { withContext } from "./AppContext"
 import Income from './Finances//Income'
 import Expense from './Finances/Expense'
+import { Link, withRouter } from "react-router-dom";
 import './profile.css'
 
 
 
 class Profile extends Component {
-    constructor (){
-        super()
-        this.state ={
-            
-        }
+    componentDidMount(){
+        this.props.getFinances()
     }
     
     render(){
         
         const totalIncomes = this.props.incomes.reduce((a,b) => a + Number(b.amount), 0) 
         const totalExpenses = this.props.expenses.reduce((a,b) => a + Number(b.amount), 0 )
-
+        const difference = parseInt(totalIncomes) - parseInt(totalExpenses)
+        const days = 30
+        const spendingLimit = (parseInt(difference) / days).toFixed(2)
         const incomes = this.props.incomes.map(income =>{
             return (
                 <Income 
@@ -39,7 +39,7 @@ class Profile extends Component {
                 />
             )
         })
-        console.log(this.props.expenses)
+        
         return (
             <>
             <h1 className="main-title">
@@ -65,6 +65,16 @@ class Profile extends Component {
                 <div className="total-expense">
                     Total Expenses = ${totalExpenses}
                 </div>
+                
+            </div>
+            
+            <div className="daily-limit">
+            <h4>Daily Spending Limit</h4>
+               <h1>${spendingLimit}</h1> 
+            </div>
+            <br></br>
+            <div className="button">
+                <Link to="/finance">Add Finances</Link>
             </div>
            
             </>

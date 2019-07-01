@@ -3,6 +3,7 @@ import { withContext } from '../AppContext'
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap'
 import "./Login.css"
 import "bootstrap/dist/css/bootstrap.css"
+import {Link, withRouter } from "react-router-dom"
 
 class LoginForm extends Component {
     constructor() {
@@ -49,7 +50,7 @@ class LoginForm extends Component {
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit} >
                     <h1>PixelWallet</h1>
-                    <h2 className="grey-text text-darken-3">Log in</h2>
+                    <h3 className="grey-text text-darken-3">Log in</h3>
                     <div className="input-field">
 
                     </div>
@@ -75,16 +76,21 @@ class LoginForm extends Component {
                     </FormGroup>
 
                     <button type="submit"
-                            className="btn-lg btn-dark btn-block">
-                        Submit
+                            className="btn-lg btn-dark">
+                        View Finances
                     </button>
                     </form>
                     <br></br>
                     {
                         this.state.errorMessage &&
-                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
+                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
                     }
+                    <br></br>
+                    <div>Don't have an account?</div>
+                    <button className=" btn-dark"><Link to="/signup">sign up here</Link></button>
+            
             </div>
+            
             </>
         )
     }
