@@ -7,7 +7,7 @@ function Expense(props) {
             <h4>$ {props.expense.amount}</h4>
             {/* <h2>{props.expense.type}</h2> */}
 
-            <button className="btn-dark" onClick={() => props.deleteExpense(props.expense._id)}>delete</button>
+            <button className="btn btn-danger" onClick={() => props.deleteExpense(props.expense._id)}>delete</button>
         </div>
         
         </>

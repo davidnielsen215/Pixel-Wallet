@@ -62,7 +62,7 @@ class AddIncomeForm extends Component {
                     />
                     <br></br>
                     <br></br>
-                    <button className="btn-dark">add</button>
+                    <button className="btn btn-primary">add</button>
                 </form>
             </div>
         )

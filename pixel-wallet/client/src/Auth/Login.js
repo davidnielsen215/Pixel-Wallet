@@ -3,7 +3,7 @@ import { withContext } from '../AppContext'
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap'
 import "./Login.css"
 import "bootstrap/dist/css/bootstrap.css"
-import {Link, withRouter } from "react-router-dom"
+import {Link, withRouter, Route } from "react-router-dom"
 
 class LoginForm extends Component {
     constructor() {
@@ -29,7 +29,11 @@ class LoginForm extends Component {
             errorMessage: ""
         })
     }
-    
+
+    reRoute = (e) => {
+        this.props.history.push("/signup")
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.login(this.state)
@@ -39,7 +43,7 @@ class LoginForm extends Component {
             .catch(err => {
                 console.log(err)
                 this.clearInputs()
-                this.setState({errorMessage: "Username or password are incorrect"})
+                this.setState({errorMessage: "USERNAME OR PASSWORD ARE INCORRECT"})
             })
     }
 
@@ -62,7 +66,8 @@ class LoginForm extends Component {
                         value={this.state.username}
                         name="username"
                         type="text" 
-                        autoComplete='off'/>
+                        autoComplete='off'
+                        />
                     <br></br>
                     <label>Password</label>
                     <br></br>
@@ -76,18 +81,18 @@ class LoginForm extends Component {
                     </FormGroup>
 
                     <button type="submit"
-                            className="btn-lg btn-dark">
-                        View Finances
+                            className="btn-lg btn-dark">View Finances
                     </button>
                     </form>
                     <br></br>
                     {
                         this.state.errorMessage &&
-                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
+                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
                     }
                     <br></br>
                     <div>Don't have an account?</div>
-                    <button className=" btn-dark"><Link to="/signup">sign up here</Link></button>
+                    <br></br>
+                    <button className="btn btn-success" onClick={this.reRoute}>Sign Up Here!</button>
             
             </div>
             

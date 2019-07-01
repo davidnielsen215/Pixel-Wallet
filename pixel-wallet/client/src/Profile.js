@@ -11,6 +11,9 @@ class Profile extends Component {
     componentDidMount(){
         this.props.getFinances()
     }
+    reRoute = (e) => {
+        this.props.history.push("/finance")
+    }
     
     render(){
         
@@ -73,10 +76,12 @@ class Profile extends Component {
                <h1>${spendingLimit}</h1> 
             </div>
             <br></br>
-            <div className="button">
+            {/* <div className="button">
                 <Link to="/finance">Add Finances</Link>
-            </div>
-           
+            </div> */}
+           <button className="btn-lg btn-primary" onClick={this.reRoute}>Edit Finances</button>
+           <br></br>
+           <br></br>
             </>
         )
     }

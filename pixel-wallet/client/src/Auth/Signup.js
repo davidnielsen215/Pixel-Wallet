@@ -21,7 +21,9 @@ class Signup extends Component {
             [name]: value
         })
     }
-
+    reRoute = (e) => {
+        this.props.history.push("/login")
+    }
     clearInputs = () => {
     this.setState({
         username: "",
@@ -38,7 +40,7 @@ class Signup extends Component {
         })
         .catch(err => {
             this.clearInputs()
-            this.setState({errorMessage: "That username already exists!"})
+            this.setState({errorMessage: "USERNAME ALREADY EXISTS"})
         })
 }
 
@@ -76,12 +78,13 @@ class Signup extends Component {
                     <br></br>
                     {
                         this.state.errorMessage &&
-                        <p style={{color: "red"}}>{this.state.errorMessage}</p>
+                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
                     }
                     <br>
                     </br>
                     <div>Already have an account?</div>
-            <Link to="/login">Log In Here</Link>
+                    <br></br>
+                    <button className="btn btn-primary" onClick={this.reRoute}>Log In here</button>
             </div>
         )
     }

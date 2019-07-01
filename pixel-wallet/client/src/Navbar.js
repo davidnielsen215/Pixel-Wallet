@@ -2,23 +2,27 @@ import React from 'react';
 import { withContext } from "./AppContext";
 import { Link, withRouter } from "react-router-dom";
 
+
 function Navbar(props) {
+
     const logoutButton = () => {
         props.logout()
         props.history.push('/login')
     }
+
+
     return (
         <nav className="navbar-wrapper">
 
             {
                 !props.token ?
                     <React.Fragment>
-                        <div className="btn-lg btn-dark">
-                            <Link to="/signup">Sign Up</Link>
-                        </div>
+                        <button className="btn-lg btn-dark btn-outline-dark" >
+                        <Link to="/signup">Create an account</Link>
+                        </button>
 
-                        <div className="btn-lg btn-dark">
-                            <Link to="/login">Log In</Link>
+                        <div className="btn-lg btn-dark btn-outline-dark">
+                            <Link to="/login">Use Existing Account</Link>
                         </div>
 
                     </React.Fragment>
