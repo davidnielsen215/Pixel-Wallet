@@ -43,7 +43,7 @@ class LoginForm extends Component {
             .catch(err => {
                 console.log(err)
                 this.clearInputs()
-                this.setState({errorMessage: "USERNAME OR PASSWORD ARE INCORRECT"})
+                this.setState({errorMessage: "Username or Password are Incorrect"})
             })
     }
 
@@ -59,7 +59,8 @@ class LoginForm extends Component {
 
                     </div>
                     <FormGroup>
-                        <label>Username</label>
+                        <label >Username</label>
+                        
                         <br></br>
                     <input 
                         onChange={this.handleChange}
@@ -68,6 +69,7 @@ class LoginForm extends Component {
                         type="text" 
                         autoComplete='off'
                         />
+                        
                     <br></br>
                     <label>Password</label>
                     <br></br>
@@ -87,7 +89,7 @@ class LoginForm extends Component {
                     <br></br>
                     {
                         this.state.errorMessage &&
-                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
+                        <div class="alert alert-danger " role="alert">{this.state.errorMessage}</div>
                     }
                     <br></br>
                     <div>Don't have an account?</div>

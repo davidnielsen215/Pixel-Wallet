@@ -82,6 +82,7 @@ class Profile extends Component {
            <button className="btn-lg btn-primary" onClick={this.reRoute}>Edit Finances</button>
            <br></br>
            <br></br>
+           
             </>
         )
     }
