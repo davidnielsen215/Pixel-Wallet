@@ -5,6 +5,7 @@ import AddIncomeForm from './AddIncomeForm'
 import AddExpenseForm from './AddExpenseForm'
 import { withContext } from '../AppContext'
 import "./Financelist.css"
+import { Link } from 'react-router-dom'
 
 function FinanceList(props) {
     const incomes = props.incomes.map(income =>{
@@ -30,6 +31,8 @@ function FinanceList(props) {
     })
 
     return (
+        <>
+            <h1 className="pixel-finance">Pixel Wallet</h1>
         <form className="finance-list">
             <main>
                 <AddIncomeForm addIncome={props.addIncome} />
@@ -37,9 +40,15 @@ function FinanceList(props) {
                 
                     <AddExpenseForm addExpense={props.addExpense} />
                 
+            
             </main>
+        <div className="finance-page">
+            <div className="nav-link">
+            <Link className="btn-lg btn-primary btn-block" to="/profile">View Finances</Link>
+            </div>
+        </div>
         </form>
-        
+        </>
     )
 }
 

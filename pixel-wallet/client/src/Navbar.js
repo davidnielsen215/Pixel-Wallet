@@ -17,31 +17,31 @@ function Navbar(props) {
             {
                 !props.token ?
                     <React.Fragment>
-                        <button className="btn-lg btn-dark btn-outline-dark" >
-                        <Link to="/signup">Create an account</Link>
+                        <button className="btn-small  btn-primary" >
+                        <Link className="nav-link" to="/signup">Create Account</Link>
                         </button>
 
-                        <div className="btn-lg btn-dark btn-outline-dark">
-                            <Link to="/login">Use Existing Account</Link>
-                        </div>
+                        <button className="btn-small  btn-primary">
+                            <Link className="nav-link" to="/login">Use Existing Account</Link>
+                        </button>
 
                     </React.Fragment>
                 :
                     <React.Fragment>
                         
-                        <div className="btn-lg btn-dark">
-                            <Link to="/finance">Edit Finances</Link>
+                        <div className="nav-link" >
+                            <Link className="btn-lg btn-primary"to="/finance">Finances</Link>
                         </div>
 
-                        <div className="btn-lg btn-dark">
-                            <Link to="/profile">Profile</Link>
+                        <div className="nav-link" >
+                            <Link className="btn-lg btn-primary" to="/profile">Profile</Link>
                         </div>
                        
                         
 
-                        <div>
-                            <button onClick={logoutButton} className="btn-lg btn-dark btn-block">
-                                Logout</button>
+                        <div className="nav-link">
+                            <span onClick={logoutButton} className="btn-lg btn-success">
+                                Logout</span>
                         </div>
                     </React.Fragment>
             }

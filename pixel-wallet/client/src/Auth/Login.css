@@ -11,10 +11,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    
+ 
 }
 
 .alert-danger{
     width: 30%;
     display: inline-block;
+}
+.login-input{
+    border-radius: 9px;
 }

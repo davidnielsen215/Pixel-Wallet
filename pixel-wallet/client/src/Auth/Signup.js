@@ -40,7 +40,7 @@ class Signup extends Component {
         })
         .catch(err => {
             this.clearInputs()
-            this.setState({errorMessage: "USERNAME ALREADY EXISTS"})
+            this.setState({errorMessage: "Username already exists!"})
         })
 }
 
@@ -48,15 +48,16 @@ class Signup extends Component {
         return (
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
-                <h1>PixelWallet</h1>
-                    <h3 className="grey-text text-darken-3">Sign Up</h3>
+                <h1 className="pixel-wallet">Pixel Wallet</h1>
+                    <h3 className="grey-text text-darken-3">Create a new account</h3>
                     <div className="input-field">
+<span class="badge badge-danger">{this.state.errorMessage}</span>
 
                     </div>
                     <FormGroup>
-                        <label>Username</label>
+                        <label className="username">Username</label>
                         <br></br>
-                    <input 
+                    <input className="login-input"
                         onChange={this.handleChange}
                         value={this.state.username}
                         name="username"
@@ -64,27 +65,24 @@ class Signup extends Component {
                         
                         autoComplete='off'/>
                         <br></br>
-                        <label>Password</label>
+                        <label className="password">Password</label>
                         <br></br>
-                    <input
+                    <input className="login-input"
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
                         autoComplete='off'/>
                     </FormGroup>
-                    <button type="submit" className="btn-lg btn-dark">Create Account</button>
+                    <div className="button-container">
+                        <button type="submit" className="btn-block btn-lg btn-dark">Create Account
+                    </button></div>
                     </form>
                     <br></br>
-                    {
-                        this.state.errorMessage &&
-                        <p style={{color: "white"}}>{this.state.errorMessage}</p>
-                    }
-                    <br>
-                    </br>
-                    <div>Already have an account?</div>
-                    <br></br>
-                    <button className="btn btn-primary" onClick={this.reRoute}>Log In here</button>
+                    
+                    <div className="question">Already have an account? <button className="btn-small btn-primary" onClick={this.reRoute}>Log In here</button></div>
+                    
+                    
             </div>
         )
     }

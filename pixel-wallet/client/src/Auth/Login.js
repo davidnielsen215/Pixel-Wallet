@@ -38,7 +38,7 @@ class LoginForm extends Component {
         e.preventDefault();
         this.props.login(this.state)
             .then(() => {
-                this.props.history.push("/profile")
+                this.props.history.push("/finance")
             })
             .catch(err => {
                 console.log(err)
@@ -53,16 +53,17 @@ class LoginForm extends Component {
        
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit} >
-                    <h1>PixelWallet</h1>
+                    <h1 className="pixel-wallet">Pixel Wallet</h1>
                     <h3 className="grey-text text-darken-3">Log in</h3>
                     <div className="input-field">
+                        <span class="badge badge-danger">{this.state.errorMessage}</span>
 
                     </div>
                     <FormGroup>
-                        <label >Username</label>
+                        <label className='username'>Username</label>
                         
                         <br></br>
-                    <input 
+                    <input className="login-input"
                         onChange={this.handleChange}
                         value={this.state.username}
                         name="username"
@@ -71,30 +72,26 @@ class LoginForm extends Component {
                         />
                         
                     <br></br>
-                    <label>Password</label>
+                    <label className="password">Password</label>
                     <br></br>
-                    <input
+                    <input className="login-input"
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
                         autoComplete='off'/>
-                        <br></br>
+                        
                     </FormGroup>
-
-                    <button type="submit"
-                            className="btn-lg btn-dark">View Finances
-                    </button>
+                    <div className="button-container">
+                        <button type="submit" className="btn-block btn-lg btn-dark">Log In
+                    </button></div>
+                    
+                    
                     </form>
                     <br></br>
-                    {
-                        this.state.errorMessage &&
-                        <div class="alert alert-danger " role="alert">{this.state.errorMessage}</div>
-                    }
-                    <br></br>
-                    <div>Don't have an account?</div>
-                    <br></br>
-                    <button className="btn btn-success" onClick={this.reRoute}>Sign Up Here!</button>
+                    
+                    <div className="question"> Don't have an account? <button className="btn-small btn-primary" onClick={this.reRoute}>Sign Up Here!</button></div>
+                    
             
             </div>
             

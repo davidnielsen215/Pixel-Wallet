@@ -53,6 +53,7 @@ class Profile extends Component {
             </h1>
             <div className='finance-container'>
                 <div className="income-container">
+
                     {incomes}
                 </div>
             
@@ -61,25 +62,25 @@ class Profile extends Component {
                 </div>
                 
             </div>
+           
             <div className="total-container">
               <div className="total-income">
-                    Total Income = ${totalIncomes}
+                  
+                    Total ${totalIncomes}
                 </div>
                 <div className="total-expense">
-                    Total Expenses = ${totalExpenses}
+                    Total ${totalExpenses}
                 </div>
                 
             </div>
-            
+        
             <div className="daily-limit">
-            <h4>Daily Spending Limit</h4>
-               <h1>${spendingLimit}</h1> 
+            Daily Spending Limit
+              ${spendingLimit}
             </div>
             <br></br>
-            {/* <div className="button">
-                <Link to="/finance">Add Finances</Link>
-            </div> */}
-           <button className="btn-lg btn-primary" onClick={this.reRoute}>Edit Finances</button>
+           <button className="btn-lg btn-primary " onClick={this.reRoute}>Edit Finances</button>
+            
            <br></br>
            <br></br>
            
