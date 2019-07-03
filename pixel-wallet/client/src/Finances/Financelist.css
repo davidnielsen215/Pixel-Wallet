@@ -1,6 +1,6 @@
 body{
-    background-image:url("https://backgroundcheckall.com/wp-content/uploads/2018/10/background-powerpoint-tosca-2.jpg");
-    background-repeat: no-repeat;
+    background-image:url("https://cdn.pixabay.com/photo/2017/03/25/18/06/color-2174066_1280.png");
+    /* background-repeat: no-repeat; */
     background-size: cover;
     
 }
@@ -11,7 +11,7 @@ body{
     height: 600px;
     padding: 15px;
     margin: auto;
-    padding-top: 5%;
+    padding-top: 1%;
     margin-top: 2%;
     /* display: grid; */
     /* border: 1px solid black; */
@@ -82,3 +82,8 @@ body{
         margin-bottom: -2%;
 }
 
+.sub-title{
+    color: white;
+    font-size: 20px;
+    margin-top: 2%;
+}

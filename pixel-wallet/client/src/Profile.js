@@ -22,6 +22,7 @@ class Profile extends Component {
         const difference = parseInt(totalIncomes) - parseInt(totalExpenses)
         const days = 30
         const spendingLimit = (parseInt(difference) / days).toFixed(2)
+
         const incomes = this.props.incomes.map(income =>{
             return (
                 <Income 
@@ -45,6 +46,8 @@ class Profile extends Component {
         
         return (
             <>
+            <h1 className="pixel-finance">Pixel Wallet</h1>
+            <br></br>
             <h1 className="main-title">
                 INCOME 
             </h1>

@@ -33,6 +33,8 @@ function FinanceList(props) {
     return (
         <>
             <h1 className="pixel-finance">Pixel Wallet</h1>
+            <br></br>
+            <h3 className="sub-title">Monthly Income and Expenses</h3>
         <form className="finance-list">
             <main>
                 <AddIncomeForm addIncome={props.addIncome} />

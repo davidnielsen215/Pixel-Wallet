@@ -11,7 +11,7 @@ function Income(props) {
     </tr>
   </thead>
   <tbody>
-    <tr class="bg-success">
+    <tr class="bg-info">
       <th scope="row">Income</th>
       <td>{props.income.title.toUpperCase()}</td>
       <td>${props.income.amount}</td>
