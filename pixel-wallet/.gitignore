@@ -9,6 +9,10 @@
 
 /build
 
+.env
+*.orig
+.idea/
+.vscode/
 .DS_Store
 .env.local
 .env.development.local
