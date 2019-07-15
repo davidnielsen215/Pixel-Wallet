@@ -1,9 +1,10 @@
 body{
-    background-image:url("https://cdn.pixabay.com/photo/2017/03/25/18/06/color-2174066_1280.png");
+    background:url("https://cdn.pixabay.com/photo/2017/03/25/18/06/color-2174066_1280.png");
     /* background-repeat: no-repeat; */
     background-size: cover;
     
 }
+
 .finance-list{
     width: 25%;
     align-content: center;

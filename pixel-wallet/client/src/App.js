@@ -25,3 +25,5 @@ function App() {
 }
 
 export default App
+
+//"lodash": "^4.17.11"

@@ -1,3 +1,6 @@
+body{
+    background-image:url("https://cdn.pixabay.com/photo/2017/12/24/23/58/geometric-3037786_1280.png")
+}
 
 .finance-container{
     display: flex;
